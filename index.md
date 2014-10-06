@@ -32,9 +32,9 @@ APIs:
 
 | Name | Description | Life instance | Source | 
 | ----- |----- | -----| -----|
-| P3 Proxy | An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance| [http://vmchh.bfh.ch:8181/](http://vmchh.bfh.ch:8181/) | [https://github.com/fusepoolP3/p3-proxy](https://github.com/fusepoolP3/p3-proxy)| 
-| P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://vmchh.bfh.ch:8191/](http://vmchh.bfh.ch:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
-| P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://vmchh.bfh.ch:8192/](http://vmchh.bfh.ch:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
+| P3 Proxy | An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance| [http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/) | [https://github.com/fusepoolP3/p3-proxy](https://github.com/fusepoolP3/p3-proxy)| 
+| P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://sandbox.fusepool.info:8191/](http://sandbox.fusepool.info:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
+| P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://sandbox.fusepool.info:8192/](http://sandbox.fusepool.info:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
 
 
 ## <a name="support-or-contact"></a>Support or Contact
