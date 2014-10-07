@@ -36,6 +36,15 @@ APIs:
 | P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://sandbox.fusepool.info:8191/](http://sandbox.fusepool.info:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
 | P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://sandbox.fusepool.info:8192/](http://sandbox.fusepool.info:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
 
+### P3 Dictionary Matcher
+
+The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI (http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf)[http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf] will find mentions of New York Times category in a textual content.
+
+To try it out witch cURL: 
+
+`curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
+
+
 
 ## <a name="support-or-contact"></a>Support or Contact
 
