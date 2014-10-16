@@ -36,9 +36,30 @@ APIs:
 | P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://sandbox.fusepool.info:8191/](http://sandbox.fusepool.info:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
 | P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://sandbox.fusepool.info:8192/](http://sandbox.fusepool.info:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
 
+### P3 Proxy
+
+Via the Proxy you can access an LDP instance. The root container is localted at `http://sandbox.fusepool.info:8181/ldp`.
+
+    $ curl -H "Accept: text/turtle" http://sandbox.fusepool.info:8181/ldp
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix : <http://sandbox.fusepool.info:8181/ldp> .
+
+    <http://sandbox.fusepool.info:8181/ldp> <http://www.w3.org/2000/01/rdf-schema#label> "Marmotta's LDP Root Container" ;
+    	a ldp:Resource , ldp:RDFSource , ldp:Container , ldp:BasicContainer ;
+    	ldp:interactionModel ldp:Container ;
+    	dcterms:created "2014-10-16T09:03:48.000Z"^^xsd:dateTime ;
+    	dcterms:modified "2014-10-16T09:03:48.000Z"^^xsd:dateTime .
+
+By the time you're reading this the root container is likely to contain some 
+child elements, some of them might be [transforming containers](https://github.com/fusepoolP3/overall-architecture/blob/master/transforming-container-api.md).
+
+
 ### P3 Dictionary Matcher
 
-The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI (http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf)[http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf] will find mentions of New York Times category in a textual content.
+The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
 
 To try it out witch cURL: 
 
