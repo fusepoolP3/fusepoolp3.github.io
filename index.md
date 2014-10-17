@@ -65,6 +65,42 @@ To try it out witch cURL:
 
 `curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
 
+## P3 Batch Refine Transformer
+
+$ curl http://hetzy1.spaziodati.eu:7100 
+<http://hetzy1.spaziodati.eu:7100/>
+      <http://vocab.fusepool.info/transformer#supportedInputFormat>
+              "text/csv"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://vocab.fusepool.info/transformer#supportedOutputFormat>
+              "text/csv"^^<http://www.w3.org/2001/XMLSchema#string> , "text/turtle"^^<http://www.w3.org/2001/XMLSchema#string> , "application/rdf+xml"^^<http://www.w3.org/2001/XMLSchema#string> .
+reto@dev-u1:/tmp$ curl http://www.commercio.provincia.tn.it/binary/pat_commercio/marchi_prodotto/Elenco_osterie_tipiche_civici.1386925759.csv > osterie.csv
+
+$ curl -D - -X POST -H "Content-Type: text/csv" -H "Accept: text/turtle" --data-binary @osterie.csv http://hetzy1.spaziodati.eu:7100/?refinejson=https://raw.githubusercontent.com/fusepoolP3/p3-geo-interlinking/master/src/main/resources/eu/fusepool/deduplication/transformer/Localita-Trentino-bn.json 
+HTTP/1.1 100 Continue
+
+HTTP/1.1 202 Accepted
+Date: Thu, 16 Oct 2014 11:24:10 GMT
+Location: /job/1e706d3e-c8f2-4be1-88a5-ef4fca8b8a35
+Transfer-Encoding: chunked
+Server: Jetty(9.2.z-SNAPSHOT)
+
+$ curl -D - http://hetzy1.spaziodati.eu:7100/job/1e706d3e-c8f2-4be1-88a5-ef4fca8b8a35
+HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2014 11:25:34 GMT
+Content-Type: text/turtle
+Transfer-Encoding: chunked
+Server: Jetty(9.2.z-SNAPSHOT)
+
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbont: <http://dbpedia.org/ontology> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gs: <http://www.opengis.net/ont/geosparql> .
+
 
 
 ## <a name="support-or-contact"></a>Support or Contact
