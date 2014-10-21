@@ -38,7 +38,7 @@ APIs:
 
 ### P3 Proxy
 
-Via the Proxy you can access an LDP instance. The root container is localted at `http://sandbox.fusepool.info:8181/ldp`.
+Via the Proxy you can access an LDP instance. The root container is located at `http://sandbox.fusepool.info:8181/ldp`.
 
     $ curl -H "Accept: text/turtle" http://sandbox.fusepool.info:8181/ldp
     @prefix ldp: <http://www.w3.org/ns/ldp#> .
@@ -65,7 +65,7 @@ To try it out witch cURL:
 
 `curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
 
-## P3 Batch Refine Transformer
+### P3 Batch Refine Transformer
 
 Get a CSV file describing the osterie of Trentino:
 
@@ -111,6 +111,22 @@ Eventually get the results
         foaf:name "AI DUE CAMI" ;
         foaf:theme "Albergo-Ristorante-Bar" .
 
+### P3 Resource GUI
+
+This is a graphical user interface to deal with Linked-Data-Platform-Collections.
+
+Currently some functionality is not available when using with Marmotta, unless
+some browser security features are disabled. To start chromium with disabled security:
+
+    chromium-browser --disable-web-security
+
+http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp
+
+### P3 Dashboard
+
+Currently only the the interface to handle User Interaction Requests is available
+
+http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests
 
 ## <a name="support-or-contact"></a>Support or Contact
 
