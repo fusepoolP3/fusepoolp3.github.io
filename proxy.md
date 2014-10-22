@@ -5,8 +5,6 @@ permalink: /proxy/
 ---
 
 
-### P3 Proxy
-
 An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance.
 
 Source: [https://github.com/fusepoolP3/p3-proxy](https://github.com/fusepoolP3/p3-proxy

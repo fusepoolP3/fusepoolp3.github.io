@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Fusepool P3 Pipeline
+title: Fusepool P3 Pipeline Transformer
 permalink: /pipeline-transformer/
 ---
-
-## P3 Pipeline Transformer
 
 The Pipeline Tranformer is a tranformer executing a list of (other) transformers in sequence.
 
