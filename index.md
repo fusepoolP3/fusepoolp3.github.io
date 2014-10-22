@@ -27,8 +27,8 @@ To learn how to write a transfomer in Java:
 
 ## <a name="try-it-out"></a>Try it out
 
-The following are applications providing implementation of the Fusepool
-APIs:
+The following are applications providing implementation or basing on the Fusepool
+APIs.
 
 
 | Name | Description | Life instance | Source | 
@@ -44,10 +44,15 @@ The [transforming containers API ](https://github.com/fusepoolP3/overall-archite
 implemented by the P3 Proxy which can be backed by any compliant LDP implementation. A MArmotta backed instance is available at 
 [http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/).
 
-[Learn more](proxy)
+[Learn more](proxy/)
+
+### Transformer API
+
+The [Transforer containers API ](https://github.com/fusepoolP3/overall-architecture/blob/master/transformer-api.md) is implemented by a 
+growing number of services that allow transforming data. Check out the following transformers:
 
 
-### P3 Dictionary Matcher
+#### P3 Dictionary Matcher
 
 The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
 
@@ -55,51 +60,13 @@ To try it out witch cURL:
 
 `curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
 
-### P3 Batch Refine Transformer
+#### P3 Batch Refine Transformer
 
-Get a CSV file describing the osterie of Trentino:
+The Batch Refine Transformers uses an Open Refine configuration file to transform some input data according to the OpenRefine 
+transformation rule. For example this can be used to generate clean RDF.
 
-    $ curl http://www.commercio.provincia.tn.it/binary/pat_commercio/marchi_prodotto/Elenco_osterie_tipiche_civici.1386925759.csv > osterie.csv
+[Learn more](batch-refine/)
 
-
-Start the transformation with:
-
-    $ curl -D - -X POST -H "Content-Type: text/csv" -H "Accept: text/turtle" --data-binary @osterie.csv http://hetzy1.spaziodati.eu:7100/?refinejson=https://raw.githubusercontent.com/fusepoolP3/batchrefine/master/engines/engines-core/src/test/resources/transforms/osterie-rdfize.json
-    HTTP/1.1 100 Continue
-
-    HTTP/1.1 202 Accepted
-    Date: Mon, 20 Oct 2014 11:35:33 GMT
-    Location: /job/e4327247-1da0-4045-acdb-d592f19cd143
-    Transfer-Encoding: chunked
-    Server: Jetty(9.2.z-SNAPSHOT)
-
-Eventually get the results
-
-    $ curl -D - http://hetzy1.spaziodati.eu:7100/job/e4327247-1da0-4045-acdb-d592f19cd143
-    HTTP/1.1 200 OK
-    Date: Mon, 20 Oct 2014 11:37:10 GMT
-    Content-Type: text/turtle
-    Transfer-Encoding: chunked
-    Server: Jetty(9.2.z-SNAPSHOT)
-
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix owl: <http://www.w3.org/2002/07/owl#> .
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
-
-    [] a foaf:Organization ;
-        foaf:name "AL FAGGIO " ;
-        foaf:theme "Ristorante" .
-
-    [] a foaf:Organization ;
-        foaf:name "OSTERIA IL RITRATTO" ;
-        foaf:theme "Ristorante-Bar" .
-
-    [] a foaf:Organization ;
-        foaf:name "AI DUE CAMI" ;
-        foaf:theme "Albergo-Ristorante-Bar" .
 
 ### P3 Resource GUI
 
