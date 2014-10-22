@@ -31,13 +31,6 @@ The following are applications providing implementation or basing on the Fusepoo
 APIs.
 
 
-| Name | Description | Life instance | Source | 
-| ----- |----- | -----| -----|
-| P3 Proxy | An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance| [http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/) | [https://github.com/fusepoolP3/p3-proxy](https://github.com/fusepoolP3/p3-proxy)| 
-| P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://sandbox.fusepool.info:8191/](http://sandbox.fusepool.info:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
-| P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://sandbox.fusepool.info:8192/](http://sandbox.fusepool.info:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
-
-
 ### Transforming container API
 
 The [transforming containers API ](https://github.com/fusepoolP3/overall-architecture/blob/master/transforming-container-api.md) is 
@@ -77,7 +70,7 @@ The Pipeline Tranformer is a tranformer executing a list of (other) transformers
 
 The Fusepool project partner [Openlink Software](http://www.openlinksw.com/) provides serveral transformers to transform data to RDF.
 
-[Learn more](openlink/)
+[Learn more](openlink/rdf-generators)
 
 ### P3 Resource GUI
 
