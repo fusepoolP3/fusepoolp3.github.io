@@ -67,6 +67,11 @@ transformation rule. For example this can be used to generate clean RDF.
 
 [Learn more](batch-refine/)
 
+#### P3 Pipeline Transformer
+
+The Pipeline Tranformer is a tranformer executing a list of (other) transformers in sequence.
+
+[Learn more](pipeline-transformer/)
 
 ### P3 Resource GUI
 
