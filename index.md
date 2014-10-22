@@ -73,6 +73,12 @@ The Pipeline Tranformer is a tranformer executing a list of (other) transformers
 
 [Learn more](pipeline-transformer/)
 
+#### Openlink RDF generating transformer
+
+The Fusepool project partner [Openlink Software](http://www.openlinksw.com/) provides serveral transformers to transform data to RDF.
+
+[Learn more](openlink/)
+
 ### P3 Resource GUI
 
 This is a graphical user interface to deal with Linked-Data-Platform-Collections.
