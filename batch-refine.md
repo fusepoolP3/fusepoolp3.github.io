@@ -1,19 +1,18 @@
 ---
 layout: page
-title: Fusepool P3 Batch Refine
+title: Fusepool P3 Batch Refine Transformer
 permalink: /batch-refine/
 ---
 
-## P3 Batch Refine Transformer
 
 The Batch Refine Transformers uses an Open Refine configuration file to transform some input data according to the OpenRefine 
 transformation rule. For example this can be used to generate clean RDF.
 
-The source code is avaialble here: https://github.com/fusepoolP3/p3-batchrefine
+Source: https://github.com/fusepoolP3/p3-batchrefine
 
 A service proving such transformers is available here: http://hetzy1.spaziodati.eu:7100/
 
-### Usage
+## Usage
 
 Get a CSV file describing the osterie of Trentino:
 
