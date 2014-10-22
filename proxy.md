@@ -1,3 +1,10 @@
+---
+layout: page
+title: Fusepool P3 Proxy
+permalink: /proxy/
+---
+
+
 ### P3 Proxy
 
 An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance.
