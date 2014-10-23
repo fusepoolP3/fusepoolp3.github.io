@@ -81,13 +81,13 @@ some browser security features are disabled. To start chromium with disabled sec
 
     chromium-browser --disable-web-security
 
-http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp
+[http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp](http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp)
 
 ### P3 Dashboard
 
 Currently only the the interface to handle User Interaction Requests is available
 
-http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests
+[http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests](http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests)
 
 ## <a name="support-or-contact"></a>Support or Contact
 
