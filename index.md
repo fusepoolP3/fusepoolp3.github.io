@@ -66,9 +66,9 @@ The Pipeline Tranformer is a tranformer executing a list of (other) transformers
 
 [Learn more](pipeline-transformer/)
 
-#### Openlink RDF generating transformer
+#### OpenLink RDF generating transformer
 
-The Fusepool project partner [Openlink Software](http://www.openlinksw.com/) provides serveral transformers to transform data to RDF.
+The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) provides serveral transformers to transform data to RDF.
 
 [Learn more](openlink-rdf-generators/)
 

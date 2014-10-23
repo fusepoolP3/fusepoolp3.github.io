@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Openlink Transformers for generating RDF
+title: OpenLink Transformers for generating RDF
 permalink: /openlink-rdf-generators/
 ---
 
