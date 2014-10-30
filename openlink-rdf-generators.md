@@ -22,8 +22,9 @@ The following examples uses the follwoing two CVS files which you should downloa
 - [pubs.csv](/openlink/pubs.csv)
 - [accommodations.csv](/openlink/accommodations.csv)
 
-    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle" -H "Content-Location: http://fusepool.openlinksw.com/pub" -\-data-binary @pubs.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
-    
+The following cURL invocation will post the data
+
+    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle" -H "Content-Location: http://fusepool.openlinksw.com/pub" -\-data-binary @pubs.csv -X POST "http://fusepool.openlinksw.com/ext/csv"    
     curl -i -H "Content-Type: text/csv" -H "Accept: application/rdf+xml" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" -\-data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
 
 Note 1: Use of 'Accept' and 'Content-Location' headers is optional. The fall-backs are 'text/turtle' and 'http://fusepool.openlinksw.com/entity'.
