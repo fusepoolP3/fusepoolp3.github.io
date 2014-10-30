@@ -14,7 +14,6 @@ As per the transformer specification a GET request will return an RDF descriptio
 
     curl -i "http://fusepool.openlinksw.com/ext/csv"
     
-Attention: we haven't yet manage for the quotes  (") and double hyphens (--) to show up correctly.
 
 ### Transforming data
 
@@ -23,8 +22,9 @@ The following examples uses the follwoing two CVS files which you should downloa
 - [pubs.csv](/openlink/pubs.csv)
 - [accommodations.csv](/openlink/accommodations.csv)
 
-    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle" -H "Content-Location: http://fusepool.openlinksw.com/pub" --data-binary @pubs.csv -X POST    "http://fusepool.openlinksw.com/ext/csv"
-    curl -i -H "Content-Type: text/csv" -H "Accept: application/rdf+xml" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" --data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
+    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle" -H "Content-Location: http://fusepool.openlinksw.com/pub" -\-data-binary @pubs.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
+    
+    curl -i -H "Content-Type: text/csv" -H "Accept: application/rdf+xml" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" -\-data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
 
 Note 1: Use of 'Accept' and 'Content-Location' headers is optional. The fall-backs are 'text/turtle' and 'http://fusepool.openlinksw.com/entity'.
 
@@ -46,8 +46,8 @@ The transformation of the data requires two steps, POSTing the data and GETting 
 
 #### POSTing the data
 
-    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle; q=1.0, application/rdf+xml; q=0.9, application/ld+json; q=0.8" -H "Content-Location: http://fusepool.openlinksw.com/pub" --data-binary @pubs.csv -X POST "http://fusepool.openlinksw.com/ext-async/csv"
-    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle; q=0.8, application/rdf+xml; q=1.0, application/ld+json; q=0.9" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" --data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext-async/csv"
+    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle; q=1.0, application/rdf+xml; q=0.9, application/ld+json; q=0.8" -H "Content-Location: http://fusepool.openlinksw.com/pub" -\-data-binary @pubs.csv -X POST "http://fusepool.openlinksw.com/ext-async/csv"
+    curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle; q=0.8, application/rdf+xml; q=1.0, application/ld+json; q=0.9" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" -\-data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext-async/csv"
 
 Note: Use of 'Accept' and 'Content-Location' headers is optional. The fall-backs are 'text/turtle' and 'http://fusepool.openlinksw.com/entity'.
 
