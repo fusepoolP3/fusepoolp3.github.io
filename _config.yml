@@ -11,5 +11,3 @@ github_username:  fusepoolp3
 # Build settings
 markdown: kramdown
 
-kramdown:
-    smart_quotes:  ["apos", "apos", "ldquo", "rdquo"]
