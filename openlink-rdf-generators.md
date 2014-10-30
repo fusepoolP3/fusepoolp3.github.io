@@ -18,8 +18,8 @@ As per the transformer specification a GET request will return an RDF descriptio
 
 The following examples uses the follwoing two CVS files which you should download to the folder in which you're executing the cURL commands:
 
-- [pubs.csv](openlink/pubs.csv)
-- [accommodations.csv](openlink/accommodations.csv)
+- [pubs.csv](/openlink/pubs.csv)
+- [accommodations.csv](/openlink/accommodations.csv)
 
     curl -i -H "Content-Type: text/csv" -H "Accept: text/turtle" -H "Content-Location: http://fusepool.openlinksw.com/pub" --data-binary @pubs.csv -X POST    "http://fusepool.openlinksw.com/ext/csv"
     curl -i -H "Content-Type: text/csv" -H "Accept: application/rdf+xml" -H "Content-Location: http://fusepool.openlinksw.com/accommodation" --data-binary @accommodations.csv -X POST "http://fusepool.openlinksw.com/ext/csv"
