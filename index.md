@@ -60,6 +60,12 @@ transformation rule. For example this can be used to generate clean RDF.
 
 [Learn more](batch-refine/)
 
+#### P3 Geo Enriching transformer
+
+The Geo Enriching Transformers enriches RDF data containing geographical locations with points of interests around these locations. The locations are taken from an URI that can be specified as a query parameter in the URI of the transformer. For example the transformer eith URI [http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl](http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl) will enrich data with nearby pharmacies (assuming the data describes locations close to a pharmacy of Trentino).
+
+The sources and more information about this transformer are avialble here: [https://github.com/fusepoolP3/p3-geo-enriching-transformer](https://github.com/fusepoolP3/p3-geo-enriching-transformer)
+
 #### P3 Pipeline Transformer
 
 The Pipeline Tranformer is a tranformer executing a list of (other) transformers in sequence.
