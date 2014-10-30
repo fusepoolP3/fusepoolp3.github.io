@@ -13,6 +13,8 @@ permalink: /openlink-rdf-generators/
 As per the transformer specification a GET request will return an RDF description of the transformer.
 
     curl -i "http://fusepool.openlinksw.com/ext/csv"
+    
+Attention: we haven't yet manage for the quotes  (") and double hyphens (--) to show up correctly.
 
 ### Transforming data
 
