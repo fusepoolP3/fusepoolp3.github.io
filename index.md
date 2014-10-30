@@ -47,7 +47,7 @@ growing number of services that allow transforming data. Check out the following
 
 #### P3 Dictionary Matcher
 
-The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
+The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the transformer with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
 
 To try it out witch cURL: 
 
