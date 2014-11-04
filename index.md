@@ -20,7 +20,7 @@ standard.
 
 To learn more about the overall platform as well as the APIs we propose
 see:
-[http://fusepool.gitbooks.io/the\_fusepool\_p3\_platform/d51-deliverable.html](http://fusepool.gitbooks.io/the_fusepool_p3_platform/d51-deliverable.html)
+[http://fusepool.gitbooks.io/the_fusepool_p3_platform/content/d51-deliverable.html](http://fusepool.gitbooks.io/the_fusepool_p3_platform/content/d51-deliverable.html)
 
 To learn how to write a transfomer in Java:
 [https://github.com/fusepoolP3/p3-transformer-howto/blob/master/transformer-howto.md](https://github.com/fusepoolP3/p3-transformer-howto/blob/master/transformer-howto.md)
