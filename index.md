@@ -80,6 +80,12 @@ The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) pro
 
 [Learn more](openlink-rdf-generators/)
 
+#### OpenLink annotating transformer
+
+[OpenLink Software](http://www.openlinksw.com/) also provides serveral transformers automatically generating annotations to textual content.
+
+[Learn more](openlink-annotators/)
+
 ### P3 Resource GUI
 
 This is a graphical user interface to deal with Linked-Data-Platform-Collections.

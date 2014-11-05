@@ -17,7 +17,7 @@ As per the transformer specification a GET request will return an RDF descriptio
 
 ### Transforming data
 
-The following examples uses the follwoing two CVS files which you should download to the folder in which you're executing the cURL commands:
+The following examples uses the following two CVS files which you should download to the folder in which you're executing the cURL commands:
 
 - [pubs.csv](/openlink/pubs.csv)
 - [accommodations.csv](/openlink/accommodations.csv)
@@ -66,6 +66,6 @@ Note: Use of 'Accept' and 'Content-Location' headers is optional. The fall-backs
 
 #### GETting the result
 
-The results can be retrived at the location indicated by the Location-Header in the response to the POST request.
+The results can be retrieved at the location indicated by the Location-Header in the response to the POST request.
 
     curl -i "http://fusepool.openlinksw.com/ext-async/status/29"
