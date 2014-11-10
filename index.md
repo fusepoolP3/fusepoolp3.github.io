@@ -90,11 +90,6 @@ The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) pro
 
 This is a graphical user interface to deal with Linked-Data-Platform-Collections.
 
-Currently some functionality is not available when using with Marmotta, unless
-some browser security features are disabled. To start chromium with disabled security:
-
-    chromium-browser --disable-web-security
-
 [http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp](http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp)
 
 ### P3 Dashboard
