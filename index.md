@@ -20,113 +20,83 @@ standard.
 
 To learn more about the overall platform as well as the APIs we propose
 see:
-[http://fusepool.gitbooks.io/the\_fusepool\_p3\_platform/d51-deliverable.html](http://fusepool.gitbooks.io/the_fusepool_p3_platform/d51-deliverable.html)
+[http://fusepool.gitbooks.io/the_fusepool_p3_platform/content/d51-deliverable.html](http://fusepool.gitbooks.io/the_fusepool_p3_platform/content/d51-deliverable.html)
 
 To learn how to write a transfomer in Java:
 [https://github.com/fusepoolP3/p3-transformer-howto/blob/master/transformer-howto.md](https://github.com/fusepoolP3/p3-transformer-howto/blob/master/transformer-howto.md)
 
 ## <a name="try-it-out"></a>Try it out
 
-The following are applications providing implementation of the Fusepool
-APIs:
-
-| Name | Description | Life instance | Source | 
-| ----- |----- | -----| -----|
-| P3 Proxy | An HTTP Proxy adding P3 Transforming Container functionality to an LDP instance| [http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/) | [https://github.com/fusepoolP3/p3-proxy](https://github.com/fusepoolP3/p3-proxy)| 
-| P3 Pipeline Transformer | Allows executing multiple transformers sequentially | [http://sandbox.fusepool.info:8191/](http://sandbox.fusepool.info:8191/) | [https://github.com/fusepoolP3/p3-pipeline-transformer](https://github.com/fusepoolP3/p3-pipeline-transformer)| 
-| P3 Dictionary Matcher | Recognize entities of a SKOS taxonomy in a text | [http://sandbox.fusepool.info:8192/](http://sandbox.fusepool.info:8192/) | [https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer](https://github.com/fusepoolP3/p3-dictionary-matcher-transfromer)|
-
-### P3 Proxy
-
-Via the Proxy you can access an LDP instance. The root container is located at `http://sandbox.fusepool.info:8181/ldp`.
-
-    $ curl -H "Accept: text/turtle" http://sandbox.fusepool.info:8181/ldp
-    @prefix ldp: <http://www.w3.org/ns/ldp#> .
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix dcterms: <http://purl.org/dc/terms/> .
-    @prefix : <http://sandbox.fusepool.info:8181/ldp> .
-
-    <http://sandbox.fusepool.info:8181/ldp> <http://www.w3.org/2000/01/rdf-schema#label> "Marmotta's LDP Root Container" ;
-    	a ldp:Resource , ldp:RDFSource , ldp:Container , ldp:BasicContainer ;
-    	ldp:interactionModel ldp:Container ;
-    	dcterms:created "2014-10-16T09:03:48.000Z"^^xsd:dateTime ;
-    	dcterms:modified "2014-10-16T09:03:48.000Z"^^xsd:dateTime .
-
-By the time you're reading this the root container is likely to contain some 
-child elements, some of them might be [transforming containers](https://github.com/fusepoolP3/overall-architecture/blob/master/transforming-container-api.md).
+The following are applications providing implementation or basing on the Fusepool
+APIs.
 
 
-### P3 Dictionary Matcher
+### Transforming container API
 
-The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the matcher with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
+The [transforming containers API ](https://github.com/fusepoolP3/overall-architecture/blob/master/transforming-container-api.md) is 
+implemented by the P3 Proxy which can be backed by any compliant LDP implementation. A MArmotta backed instance is available at 
+[http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/).
+
+[Learn more](proxy/)
+
+### Transformer API
+
+The [Transforer containers API ](https://github.com/fusepoolP3/overall-architecture/blob/master/transformer-api.md) is implemented by a 
+growing number of services that allow transforming data. Check out the following transformers:
+
+
+#### P3 Dictionary Matcher
+
+The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the transformer with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
 
 To try it out witch cURL: 
 
 `curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
 
-### P3 Batch Refine Transformer
+The sources and more information about this transformer are available here: [https://github.com/fusepoolP3/p3-dictionary-matcher-transformer](https://github.com/fusepoolP3/p3-dictionary-matcher-transformer)
 
-Get a CSV file describing the osterie of Trentino:
+#### P3 Batch Refine Transformer
 
-    $ curl http://www.commercio.provincia.tn.it/binary/pat_commercio/marchi_prodotto/Elenco_osterie_tipiche_civici.1386925759.csv > osterie.csv
+The Batch Refine Transformers uses an Open Refine configuration file to transform some input data according to the OpenRefine 
+transformation rule. For example this can be used to generate clean RDF.
 
+[Learn more](batch-refine/)
 
-Start the transformation with:
+#### P3 Geo Enriching transformer
 
-    $ curl -D - -X POST -H "Content-Type: text/csv" -H "Accept: text/turtle" --data-binary @osterie.csv http://hetzy1.spaziodati.eu:7100/?refinejson=https://raw.githubusercontent.com/fusepoolP3/batchrefine/master/engines/engines-core/src/test/resources/transforms/osterie-rdfize.json
-    HTTP/1.1 100 Continue
+The Geo Enriching Transformers enriches RDF data containing geographical locations with points of interests around these locations. The locations are taken from an URI that can be specified as a query parameter in the URI of the transformer. For example the transformer eith URI [http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl](http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl) will enrich data with nearby pharmacies (assuming the data describes locations close to a pharmacy of Trentino).
 
-    HTTP/1.1 202 Accepted
-    Date: Mon, 20 Oct 2014 11:35:33 GMT
-    Location: /job/e4327247-1da0-4045-acdb-d592f19cd143
-    Transfer-Encoding: chunked
-    Server: Jetty(9.2.z-SNAPSHOT)
+The sources and more information about this transformer are available here: [https://github.com/fusepoolP3/p3-geo-enriching-transformer](https://github.com/fusepoolP3/p3-geo-enriching-transformer)
 
-Eventually get the results
+#### P3 Pipeline Transformer
 
-    $ curl -D - http://hetzy1.spaziodati.eu:7100/job/e4327247-1da0-4045-acdb-d592f19cd143
-    HTTP/1.1 200 OK
-    Date: Mon, 20 Oct 2014 11:37:10 GMT
-    Content-Type: text/turtle
-    Transfer-Encoding: chunked
-    Server: Jetty(9.2.z-SNAPSHOT)
+The Pipeline Tranformer is a tranformer executing a list of (other) transformers in sequence.
 
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix owl: <http://www.w3.org/2002/07/owl#> .
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+[Learn more](pipeline-transformer/)
 
+#### OpenLink RDF generating transformer
 
-    [] a foaf:Organization ;
-        foaf:name "AL FAGGIO " ;
-        foaf:theme "Ristorante" .
+The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) provides serveral transformers to transform data to RDF.
 
-    [] a foaf:Organization ;
-        foaf:name "OSTERIA IL RITRATTO" ;
-        foaf:theme "Ristorante-Bar" .
+[Learn more](openlink-rdf-generators/)
 
-    [] a foaf:Organization ;
-        foaf:name "AI DUE CAMI" ;
-        foaf:theme "Albergo-Ristorante-Bar" .
+#### OpenLink annotating transformer
+
+[OpenLink Software](http://www.openlinksw.com/) also provides serveral transformers automatically generating annotations to textual content.
+
+[Learn more](openlink-annotators/)
 
 ### P3 Resource GUI
 
 This is a graphical user interface to deal with Linked-Data-Platform-Collections.
 
-Currently some functionality is not available when using with Marmotta, unless
-some browser security features are disabled. To start chromium with disabled security:
-
-    chromium-browser --disable-web-security
-
-http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp
+[http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp](http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp)
 
 ### P3 Dashboard
 
 Currently only the the interface to handle User Interaction Requests is available
 
-http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests
+[http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests](http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests)
 
 ## <a name="support-or-contact"></a>Support or Contact
 
