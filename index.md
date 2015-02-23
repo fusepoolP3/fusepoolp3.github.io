@@ -90,7 +90,7 @@ The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) pro
 
 It is a graphical user interface to list the available transformers and provide functionality for creating pipelines.
 
-[http://sandbox.fusepool.info:8201/](http://sandbox.fusepool.info:8201/)
+[http://fusepoolp3.github.io/p3-pipeline-gui-js/](http://fusepoolp3.github.io/p3-pipeline-gui-js/)
 
 ### P3 Resource GUI
 
@@ -100,9 +100,9 @@ This is a graphical user interface to deal with Linked-Data-Platform-Collections
 
 ### P3 Dashboard
 
-Currently only the the interface to handle User Interaction Requests is available
+P3 administrator dashboard is the main user interface for uploading files easily to the platform using transformers. 
 
-[http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests](http://fusepoolp3.github.io/user-interaction-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp/user-interaction-requests)
+[http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc](http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc)
 
 ## <a name="support-or-contact"></a>Support or Contact
 
