@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="lib/openlayers/ol.css">
+        <!-- link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" / -->
+        <!-- link rel="stylesheet" type="text/css" href="lib/jquery/datatables/css/jquery.dataTables.min.css" / -->
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <!-- JS -->
+        <script type="text/javascript" src="lib/jquery/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="lib/jquery/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="lib/openlayers/ol.js"></script>
+        <script type="text/javascript" src="lib/jquery/jeditable/jquery.jeditable.js"></script>
+        <script type="text/javascript" src="lib/jquery/datatables/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script type="text/javascript" src="lib/mapcontroller/mapController.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <script type="text/javascript" src="js/pointController.js"></script>
+        <script type="text/javascript" src="js/demo.js"></script>
+    </head>
+    <body>
+	<div id="loadingCover">&nbsp;</div>
+        <div id="mainContent" class="mainContent">
+            <div id="listPanel" class="listPanel container">
+			    <div class="row">
+					Date filter for events: <input type="text" class="dateInput" id="startDate" value="2015-03-01" /> - <input type="text" class="dateInput" id="endDate" value="2015-04-01"/>
+					<a class="btn btn-default" id="searchBtn">
+						<i class="glyphicon glyphicon-search"></i>
+						Search
+					</a>
+                </div>
+                <div class="row">
+                    <table id="pointItemList" class="table table-striped table-bordered">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="listDragger" class="verticalDragger listDragger"></div>
+            <div id="mapPanel" class="mapPanel">
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
