@@ -104,6 +104,12 @@ P3 administrator dashboard is the main user interface for uploading files easily
 
 [http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc](http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc)
 
+### Simple demo app
+
+This demo app provides a simple interface to check pubs, restaurants, pharmacies, accomodations, museums and - optionally - events in Tuscany and Trentino Region on a map. You can click the location you are interested in to see what can be found nearby. To use event data from a specific resource, use the "events" attribute in the URL in which provide the URI of the resource: 
+
+[http://fusepoolp3.github.io/p3-simple-demo-app/?events=http://sandbox.fusepool.info:8181/ldp/demo/wr-ldpc/Trentino-Events/events-xml-xml-transformed](http://fusepoolp3.github.io/p3-simple-demo-app/?events=http://sandbox.fusepool.info:8181/ldp/demo/wr-ldpc/Trentino-Events/events-xml-xml-transformed)
+
 ## <a name="support-or-contact"></a>Support or Contact
 
 Need help or have suggestions? Get in touch with the developers with the
