@@ -27,6 +27,15 @@ To learn how to write a transfomer in Java:
 
 ## <a name="try-it-out"></a>Try it out
 
+The recommended way to try it out  is to run the docker image. If you've installed 
+[Docker](https://www.docker.com/) you can start the Fusepool reference implementation 
+by executing:
+
+    docker run --privileged -d --name=p3-platform -p 80:80 -p 8181:8181 -p 8151:8151 -p 8200:8200 -p 8201:8201 -p 8202:8202 -p 8203:8203 -p 8204:8204 -p 8205:8205 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8303:8303 -p 8304:8304 -p 8305:8305 -p 8306:8306 -p 8307:8307 -p 8308:8308 -p 8310:8310 fusepoolp3/platform-reference-implementation
+
+We also run an instance of the reference implementation on: [http://sandbox.fusepool.info/](http://sandbox.fusepool.info/)
+
+
 The following are applications providing implementation or basing on the Fusepool
 APIs.
 
@@ -92,17 +101,6 @@ It is a graphical user interface to list the available transformers and provide 
 
 [http://fusepoolp3.github.io/p3-pipeline-gui-js/](http://fusepoolp3.github.io/p3-pipeline-gui-js/)
 
-### P3 Resource GUI
-
-This is a graphical user interface to deal with Linked-Data-Platform-Collections.
-
-[http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp](http://fusepoolp3.github.io/resource-gui/?defaultContainer=http://sandbox.fusepool.info:8181/ldp)
-
-### P3 Dashboard
-
-P3 administrator dashboard is the main user interface for uploading files easily to the platform using transformers. 
-
-[http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc](http://fusepoolp3.github.io/p3-dashboard/index.html?configRegistry=http://sandbox.fusepool.info:8181/ldp/cr-ldpc)
 
 ### Simple demo app
 

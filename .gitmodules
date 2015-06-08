@@ -1,15 +1,9 @@
-[submodule "resource-gui"]
-	path = resource-gui
-	url = https://github.com/fusepoolP3/p3-resource-gui.git
 [submodule "user-interaction-gui"]
 	path = user-interaction-gui
 	url = https://github.com/fusepoolP3/p3-user-interaction-gui.git
 [submodule "p3-pipeline-gui-js"]
 	path = p3-pipeline-gui-js
 	url = https://github.com/fusepoolP3/p3-pipeline-gui-js.git
-[submodule "p3-dashboard"]
-	path = p3-dashboard
-	url = https://github.com/fusepoolP3/p3-dashboard.git
 [submodule "p3-simple-demo-app"]
 	path = p3-simple-demo-app
 	url = https://github.com/fusepoolP3/p3-simple-demo-app.git
