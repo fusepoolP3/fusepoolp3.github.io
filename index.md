@@ -43,8 +43,8 @@ APIs.
 ### Transforming container API
 
 The [transforming containers API ](https://github.com/fusepoolP3/overall-architecture/blob/master/transforming-container-api.md) is 
-implemented by the P3 Proxy which can be backed by any compliant LDP implementation. A MArmotta backed instance is available at 
-[http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/).
+implemented by the P3 Proxy which can be backed by any compliant LDP implementation. A Marmotta backed instance is available at 
+[http://sandbox.fusepool.info:8181/](http://sandbox.fusepool.info:8181/ldp).
 
 [Learn more](proxy/)
 
@@ -56,7 +56,7 @@ growing number of services that allow transforming data. Check out the following
 
 #### P3 Dictionary Matcher
 
-The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the transformer with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
+The dictionary matcher provides transformers the recognize entities from a SKOS taxonomy. For example the transformer with URI [http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf](http://sandbox.fusepool.info:8301/?taxonomy=http://data.nytimes.com/descriptors.rdf) will find mentions of New York Times category in a textual content.
 
 To try it out witch cURL: 
 
@@ -73,7 +73,7 @@ transformation rule. For example this can be used to generate clean RDF.
 
 #### P3 Geo Enriching transformer
 
-The Geo Enriching Transformers enriches RDF data containing geographical locations with points of interests around these locations. The locations are taken from an URI that can be specified as a query parameter in the URI of the transformer. For example the transformer eith URI [http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl](http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl) will enrich data with nearby pharmacies (assuming the data describes locations close to a pharmacy of Trentino).
+The Geo Enriching Transformers enriches RDF data containing geographical locations with points of interests around these locations. The locations are taken from an URI that can be specified as a query parameter in the URI of the transformer. For example the transformer eith URI [http://sandbox.fusepool.info:8193/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl](http://sandbox.fusepool.info:8302/?data=https://raw.githubusercontent.com/fusepoolP3/p3-geo-enriching-transformer/master/src/test/resources/eu/fusepool/p3/geo/enriching/test/farmacie-trentino-grounded.ttl) will enrich data with nearby pharmacies (assuming the data describes locations close to a pharmacy of Trentino).
 
 The sources and more information about this transformer are available here: [https://github.com/fusepoolP3/p3-geo-enriching-transformer](https://github.com/fusepoolP3/p3-geo-enriching-transformer)
 
