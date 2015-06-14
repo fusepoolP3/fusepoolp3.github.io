@@ -60,7 +60,7 @@ The dictionary matcher provides transformers the recognize entities from a SKOS 
 
 To try it out witch cURL: 
 
-`curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8192/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
+`curl -X POST -d "Frauds and Swindlings cause significant concerns with regards to Ethics." "http://sandbox.fusepool.info:8301/?taxonomy=http://data.nytimes.com/descriptors.rdf"`
 
 The sources and more information about this transformer are available here: [https://github.com/fusepoolP3/p3-dictionary-matcher-transformer](https://github.com/fusepoolP3/p3-dictionary-matcher-transformer)
 
