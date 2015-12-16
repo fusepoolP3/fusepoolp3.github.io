@@ -105,7 +105,7 @@ The Fusepool project partner [OpenLink Software](http://www.openlinksw.com/) pro
 
 It is a graphical user interface to list the available transformers and provide functionality for creating pipelines.
 
-[http://fusepoolp3.github.io/p3-pipeline-gui-js/](http://fusepoolp3.github.io/p3-pipeline-gui-js/)
+[http://sandbox.fusepool.info:8201/?transformerBase=http://sandbox.fusepool.info:8300&platformURI=http://sandbox.fusepool.info/](http://sandbox.fusepool.info:8201/?transformerBase=http://sandbox.fusepool.info:8300&platformURI=http://sandbox.fusepool.info/)
 
 
 ### Simple demo app
