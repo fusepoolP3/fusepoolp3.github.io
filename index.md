@@ -32,9 +32,12 @@ The recommended way to try it out  is to run the docker image. If you've install
 by executing:
 
     git clone https://github.com/fusepoolP3/p3-platform-reference-implementation.git p3
-    cd p3/
+    cd p3/marmotta/
     docker-compose up
-    
+
+The above will start an instanced backed by the Apache Marmotta LDP implementation, see 
+[virtuoso](https://github.com/fusepoolP3/p3-platform-reference-implementation/tree/master/virtuoso)
+for using Virtuoso Open Source.
 
 We also run an instance of the reference implementation on: [http://sandbox.fusepool.info/](http://sandbox.fusepool.info/)
 
